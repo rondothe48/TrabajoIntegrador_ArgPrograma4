@@ -23,7 +23,6 @@ public class Partido {
         Partido partido1 = new Partido();
         partido1.setGolesEquipo1(2);
         partido1.setGolesEquipo2(0);
-
     }
 
     public static void equipos() {
