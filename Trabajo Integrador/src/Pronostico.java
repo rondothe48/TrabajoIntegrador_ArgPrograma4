@@ -4,10 +4,11 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class Pronostico {
-    private Partido partido1;
-    private Equipo equipo1;
-    
-    public static void pronostico() throws IOException {
+    private Partido partido;
+    private Equipo equipo;
+    private ResultadoEnum resultado;
+
+    /*public static void pronostico() throws IOException {
         Path archivoPronostico = Paths.get("C:/Nacho/GitHub Repositories/TrabajoIntegrador/Trabajo Integrador/src/pronostico.csv");
         Files.readAllLines(archivoPronostico);
         String archivoStringPronostico = Files.readString(archivoPronostico);
@@ -19,9 +20,10 @@ public class Pronostico {
         String[] listaStringResultados = archivoStringResultados.split(",");
 
 
-    }
+    }*/
 
-    public static int puntos() {
-
+    public int puntos() {
+        this.partido = new Partido(Equipo.ARGENTINA, Equipo.ARABIA_SAUDITA);
+        
     }
 }
