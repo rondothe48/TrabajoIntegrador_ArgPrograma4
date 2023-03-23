@@ -1,14 +1,9 @@
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-
 public class Partido {
     private Equipo equipo1;
     private Equipo equipo2;
     private int golesEquipo1;
     private int golesEquipo2;
-    static String[]ResultadoEnum = {"GANADOR", "EMPATE", "PERDEDOR"};
+    static String[]resultadoEnum = {"GANADOR", "EMPATE", "PERDEDOR"};
 
     public int getGolesEquipo1() {
         return golesEquipo1;
@@ -38,11 +33,18 @@ public class Partido {
         setGolesEquipo1(1);
         setGolesEquipo2(2);
         if (golesEquipo1 < golesEquipo2) {
-            System.out.println(equipo1 + "\n" + ResultadoEnum[0]);
-            System.out.println(equipo2 + "\n" + ResultadoEnum[2]);
+            System.out.println(equipo1 + "\n" + resultadoEnum[2]);
+            System.out.println(equipo2 + "\n" + resultadoEnum[0]);
+        } else if (golesEquipo1 > golesEquipo2) {
+            System.out.println(equipo1 + "\n" + resultadoEnum[0]);
+            System.out.println(equipo2 + "\n" + resultadoEnum[2]);
         } else {
-            System.out.println(equipo2 + "\n" + ResultadoEnum[0]);
-            System.out.println(equipo1 + "\n" + ResultadoEnum[2]);
+            System.out.println(equipo1 + " - " + resultadoEnum[1] + " - " + equipo2);
         }
     }
+    /*public static void resultado(Equipo equipo) {
+        ResultadoEnum resultado = ResultadoEnum.GANADOR;
+        System.out.println(equipo);
+        System.out.println(resultado);
+    }*/
 }

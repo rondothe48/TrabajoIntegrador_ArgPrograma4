@@ -7,7 +7,8 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) throws IOException {
         Partido partido1 = new Partido(Equipo.ARGENTINA, Equipo.ARABIA_SAUDITA);
-
+        Partido partido2 = new Partido(Equipo.POLONIA, Equipo.MEXICO);
+        //Partido.resultado(Equipo.ARABIA_SAUDITA);
         //Pronostico.pronostico();
     }
 

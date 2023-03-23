@@ -5,7 +5,7 @@ import java.nio.file.Paths;
 
 public class Pronostico {
 
-    private int Mariana = 0;
+    private int mariana = 0;
 
     private Equipo equipo1;
     private Equipo equipo2;
@@ -57,5 +57,6 @@ public class Pronostico {
         }
     }
 
-    public void puntos()
+    public void puntos() {
+    }
 }
