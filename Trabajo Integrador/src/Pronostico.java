@@ -15,9 +15,6 @@ public class Pronostico {
         String archivoStringResultados = Files.readString(archivoResultados);
         String[] listaStringResultados = archivoStringResultados.split(",");
 
-        if (listaStringPronostico[9].equals(listaStringResultados[12])) {
-
-        }
     }
 
     public static void puntos() {

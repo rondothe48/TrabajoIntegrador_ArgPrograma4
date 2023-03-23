@@ -1,3 +1,8 @@
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 public class Partido {
 
     private int golesEquipo1;
@@ -25,7 +30,7 @@ public class Partido {
         partido1.setGolesEquipo2(0);
     }
 
-    public static void equipos() {
+    public static void equipos() throws IOException {
         Equipo argentina = new Equipo();
         argentina.setNombre("Argentina");
         argentina.setDescripcion("Seleccionado");

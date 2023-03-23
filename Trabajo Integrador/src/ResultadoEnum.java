@@ -1,2 +1,6 @@
-public class ResultadoEnum {
+public enum ResultadoEnum {
+    GANADOR,
+    PERDEDOR,
+    EMPATE;
+
 }
