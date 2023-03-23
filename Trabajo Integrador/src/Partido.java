@@ -4,9 +4,11 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class Partido {
-
+    private Equipo equipo1;
+    private Equipo equipo2;
     private int golesEquipo1;
     private int golesEquipo2;
+    static String[]ResultadoEnum = {"GANADOR", "EMPATE", "PERDEDOR"};
 
     public int getGolesEquipo1() {
         return golesEquipo1;
@@ -24,38 +26,23 @@ public class Partido {
         this.golesEquipo2 = golesEquipo2;
     }
 
-    public static void partidos(){
+    /*public static void partidos(int id, String nombre){
         Partido partido1 = new Partido();
         partido1.setGolesEquipo1(2);
         partido1.setGolesEquipo2(0);
+    }*/
+
+    public Partido(Equipo equipo1, Equipo equipo2) {
+        this.equipo1=equipo1;
+        this.equipo2=equipo2;
+        setGolesEquipo1(1);
+        setGolesEquipo2(2);
+        if (golesEquipo1 < golesEquipo2) {
+            System.out.println(equipo1 + "\n" + ResultadoEnum[0]);
+            System.out.println(equipo2 + "\n" + ResultadoEnum[2]);
+        } else {
+            System.out.println(equipo2 + "\n" + ResultadoEnum[0]);
+            System.out.println(equipo1 + "\n" + ResultadoEnum[2]);
+        }
     }
-
-    public static void equipos() throws IOException {
-        Equipo argentina = new Equipo();
-        argentina.setNombre("Argentina");
-        argentina.setDescripcion("Seleccionado");
-        argentina.setId(1);
-        System.out.println("El equipo ID=" + argentina.getId() + " es el " + argentina.getDescripcion() + " de " + argentina.getNombre());
-
-        Equipo arabia = new Equipo();
-        arabia.setNombre("Arabia Saudita");
-        arabia.setDescripcion("Seleccionado");
-        arabia.setId(2);
-        System.out.println("El equipo ID=" + arabia.getId() + " es el " + arabia.getDescripcion() + " de " + arabia.getNombre());
-
-        Equipo polonia = new Equipo();
-        polonia.setNombre("Polonia");
-        polonia.setDescripcion("Seleccionado");
-        polonia.setId(3);
-        System.out.println("El equipo ID=" + polonia.getId() + " es el " + polonia.getDescripcion() + " de " + polonia.getNombre());
-
-        Equipo mexico = new Equipo();
-        mexico.setNombre("México");
-        mexico.setDescripcion("Seleccionado");
-        mexico.setId(4);
-        System.out.println("El equipo ID=" + mexico.getId() + " es el " + mexico.getDescripcion() + " de " + mexico.getNombre());
-
-
-}
-
 }

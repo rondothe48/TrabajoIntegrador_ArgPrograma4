@@ -4,6 +4,9 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class Pronostico {
+    private Partido partido1;
+    private Equipo equipo1;
+    
     public static void pronostico() throws IOException {
         Path archivoPronostico = Paths.get("C:/Nacho/GitHub Repositories/TrabajoIntegrador/Trabajo Integrador/src/pronostico.csv");
         Files.readAllLines(archivoPronostico);
@@ -15,9 +18,10 @@ public class Pronostico {
         String archivoStringResultados = Files.readString(archivoResultados);
         String[] listaStringResultados = archivoStringResultados.split(",");
 
+
     }
 
-    public static void puntos() {
+    public static int puntos() {
 
     }
 }

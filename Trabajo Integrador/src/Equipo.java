@@ -1,34 +1,11 @@
-public class Equipo {
+public enum Equipo {
+    ARGENTINA("Argentina"), ARABIA_SAUDITA("Arabia Saudita"),
+    POLONIA("POLONIA"), MEXICO("MEXICO");
 
     private String nombre;
-    private String descripcion;
-    private int id;
+    //private int iD;
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
+    private Equipo(String nombre) {
         this.nombre = nombre;
     }
-
-
-
-
 }
