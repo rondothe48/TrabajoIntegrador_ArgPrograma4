@@ -5,8 +5,6 @@ import java.nio.file.Paths;
 
 public class Pronostico {
 
-    private int mariana = 0;
-
     private Equipo equipo1;
     private Equipo equipo2;
     private int golesEquipo1;
@@ -43,7 +41,7 @@ public class Pronostico {
 
     }*/
 
-    public Pronostico(Equipo equipo1, Equipo equipo2) {
+    /*public Pronostico(Equipo equipo1, Equipo equipo2) {
         this.equipo1 = equipo1;
         this.equipo2 = equipo2;
         setGolesEquipo1(1);
@@ -55,7 +53,7 @@ public class Pronostico {
             System.out.println(equipo2 + "\n" + ResultadoEnum[0]);
             System.out.println(equipo1 + "\n" + ResultadoEnum[2]);
         }
-    }
+    }*/
 
     public void puntos() {
     }
