@@ -1,3 +1,9 @@
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.List;
+
 public class Partido {
     private Equipo equipo1;
     private Equipo equipo2;
@@ -27,8 +33,50 @@ public class Partido {
         partido1.setGolesEquipo2(0);
     }*/
 
-    public Partido(Equipo equipo1, Equipo equipo2) {
-        this.equipo1=equipo1;
+    public Partido(String equipo1, String equipo2) throws IOException {
+        Path archivoResultados = Paths.get("E:/AAA GitHub/TrabajoIntegrador/Trabajo Integrador/src/resultados.csv");
+        Files.readAllLines(archivoResultados);
+        String archivoStringResultados = Files.readString(archivoResultados);
+        String[] listaStringResultados = archivoStringResultados.split(",");
+
+        if (equipo1.equals(listaStringResultados[9])) {
+            equipo1 = String.valueOf(Equipo.ARGENTINA);
+            equipo2 = String.valueOf(Equipo.ARABIA_SAUDITA);
+            System.out.println("Las selecciones a jugar son= " + equipo1 + " y " + equipo2);
+            setGolesEquipo1(Integer.parseInt(listaStringResultados[11]));
+            setGolesEquipo2(Integer.parseInt(listaStringResultados[12]));
+            if (golesEquipo1 > golesEquipo2) {
+
+                System.out.println(equipo1 + " " + ResultadoEnum.GANADOR + "\n" + equipo2 + " " + ResultadoEnum.PERDEDOR);
+            } else if ( golesEquipo1 < golesEquipo2) {
+
+                System.out.println(equipo2 + " " + ResultadoEnum.GANADOR + "\n" + equipo1 + " " + ResultadoEnum.PERDEDOR);
+            } else {
+
+                System.out.println(equipo1 + " " + ResultadoEnum.EMPATE + " " + equipo2);
+            };
+        }
+
+        //  BUSCAR SOLUCION A LA REPETICION DE CÓDIGO
+
+        if (equipo1.equals(listaStringResultados[17])) {
+            equipo1 = String.valueOf(Equipo.POLONIA);
+            equipo2 = String.valueOf(Equipo.MEXICO);
+            System.out.println("Las selecciones a jugar son= " + equipo1 + " y " + equipo2);
+            setGolesEquipo1(Integer.parseInt(listaStringResultados[19]));
+            setGolesEquipo2(Integer.parseInt(listaStringResultados[20]));
+            if (golesEquipo1 > golesEquipo2) {
+
+                System.out.println(equipo1 + " " + ResultadoEnum.GANADOR + "\n" + equipo2 + " " + ResultadoEnum.PERDEDOR);
+            } else if ( golesEquipo1 < golesEquipo2) {
+
+            System.out.println(equipo2 + " " + ResultadoEnum.GANADOR + "\n" + equipo1 + " " + ResultadoEnum.PERDEDOR);
+            } else {
+
+            System.out.println(equipo1 + " " + ResultadoEnum.EMPATE + " " + equipo2);
+            }
+        }
+        /*this.equipo1=equipo1;
         this.equipo2=equipo2;
         setGolesEquipo1(1);
         setGolesEquipo2(2);
@@ -40,7 +88,7 @@ public class Partido {
             System.out.println(equipo2 + "\n" + resultadoEnum[2]);
         } else {
             System.out.println(equipo1 + " - " + resultadoEnum[1] + " - " + equipo2);
-        }
+        }*/
     }
     /*public static void resultado(Equipo equipo) {
         ResultadoEnum resultado = ResultadoEnum.GANADOR;
