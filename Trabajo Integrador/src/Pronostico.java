@@ -2,36 +2,29 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Objects;
 
 public class Pronostico {
 
         //private List<Partido> partidos;
 
-    public Pronostico(Path archivoResultados) throws IOException {
+    //public Pronostico(Path archivoResultados) throws IOException {
             // Leer archivo de resultados y construir lista de objetos Partido
-        Files.readAllLines(archivoResultados);
+        /*Files.readAllLines(archivoResultados);
         String archivoStringResultados = Files.readString(archivoResultados);
         String[] listaStringResultados = archivoStringResultados.split(",");
         /*      Este código es de prueba /// funcional
         List<String> lineas = Files.readAllLines(archivoResultados);
         String archivoStringResultados = String.join(",", lineas);
         String[] listaStringResultados = archivoStringResultados.split(",");*/
-        PartidoProyectado partido1 = new PartidoProyectado(listaStringResultados[9], listaStringResultados[14]);
-        PartidoProyectado partido2 = new PartidoProyectado(listaStringResultados[17], listaStringResultados[22]);
+        //PartidoProyectado partido1 = new PartidoProyectado(listaStringResultados[9], listaStringResultados[14]);
+        //PartidoProyectado partido2 = new PartidoProyectado(listaStringResultados[17], listaStringResultados[22]);
 
 
 
 
-
-
-
-
-
-    /*private Equipo equipo1;
-    private Equipo equipo2;
     private int golesEquipo1;
     private int golesEquipo2;
-    static String[]ResultadoEnum = {"GANADOR", "EMPATE", "PERDEDOR"};
     public int getGolesEquipo1() {
         return golesEquipo1;
     }
@@ -49,8 +42,8 @@ public class Pronostico {
     }
 
 
-    /*public static void pronostico() throws IOException {
-        Path archivoPronostico = Paths.get("C:/Nacho/GitHub Repositories/TrabajoIntegrador/Trabajo Integrador/src/pronostico.csv");
+   /* public static void pronostico() throws IOException {
+        Path archivoPronostico = Paths.get("C:/Nacho/GitHub Repositories/TrabajoIntegrador/Trabajo Integrador/src/pronostico2.csv");
         Files.readAllLines(archivoPronostico);
         String archivoStringPronostico = Files.readString(archivoPronostico);
         String[] listaStringPronostico = archivoStringPronostico.split(",");
@@ -63,14 +56,44 @@ public class Pronostico {
 
     }*/
 
-    /*public Pronostico(Path archivoPronostico) throws IOException {
-        Files.readAllLines(archivoPronostico);
-        String archivoStringPronostico = Files.readString(archivoPronostico);
-        String[] listaStringPronostico = archivoStringPronostico.split(",");
+    public Pronostico(Path archivoPronostico) throws IOException {
+            int puntos = 0;
+
+            Path archivoResultado = Paths.get("C:/Nacho/GitHub Repositories/TrabajoIntegrador/Trabajo Integrador/src/resultados.csv");
+            Files.readAllLines(archivoResultado);
+            String archivoStringResultado = Files.readString(archivoResultado);
+            String[] listaStringResultado = archivoStringResultado.split(",");
+
+            Files.readAllLines(archivoPronostico);
+            String archivoStringPronostico = Files.readString(archivoPronostico);
+            String[] listaStringPronostico = archivoStringPronostico.split(",");
 
 
+            if (listaStringPronostico[6].equals("x") || listaStringPronostico[7].equals("x") || listaStringPronostico[8].equals("x")) {
+                setGolesEquipo1(Integer.parseInt(listaStringResultado[11]));
+                setGolesEquipo2(Integer.parseInt(listaStringResultado[12]));
+                if (listaStringPronostico[6].equals("x") && golesEquipo1 > golesEquipo2) {
+                    puntos++;
+                } else if (listaStringPronostico[7].equals("x")  && golesEquipo1 == golesEquipo2) {
+                    puntos++;
+                } else if (listaStringPronostico[8].equals("x")  && golesEquipo1 < golesEquipo2) {
+                    puntos++;
+                }
+            }
+            if (listaStringPronostico[11].equals("x") || listaStringPronostico[12].equals("x") || listaStringPronostico[13].equals("x")) {
+                setGolesEquipo1(Integer.parseInt(listaStringResultado[19]));
+                setGolesEquipo2(Integer.parseInt(listaStringResultado[20]));
+                if (listaStringPronostico[11].equals("x") && golesEquipo1 > golesEquipo2) {
+                    puntos++;
+                } else if ( listaStringPronostico[12].equals("x")  && golesEquipo1 == golesEquipo2) {
+                    puntos++;
+                } else if (listaStringPronostico[13].equals("x")  && golesEquipo1 < golesEquipo2) {
+                    puntos++;
+                }
+            }
 
-
+        System.out.println("Mariana tiene = " + puntos + " puntos");
+    }
         /*this.equipo1 = equipo1;
         this.equipo2 = equipo2;
         setGolesEquipo1(1);
@@ -82,7 +105,6 @@ public class Pronostico {
             System.out.println(equipo2 + "\n" + ResultadoEnum[0]);
             System.out.println(equipo1 + "\n" + ResultadoEnum[2]);
         }*/
-}
     public String toString() {
         return "";
     }

@@ -29,7 +29,7 @@ public class PartidoProyectado {
     public PartidoProyectado(String equipo1, String equipo2) throws IOException {
         PartidoProyectado.equipo1p = equipo1;
         PartidoProyectado.equipo2p = equipo2;
-        Path archivoResultados = Paths.get("C:\\Users\\Rondo48\\Documents\\GitHub\\TrabajoIntegrador\\Trabajo Integrador\\src\\pronostico.csv");
+        Path archivoResultados = Paths.get("C:\\Users\\Rondo48\\Documents\\GitHub\\TrabajoIntegrador\\Trabajo Integrador\\src\\pronostico2.csv");
         Files.readAllLines(archivoResultados);
         String archivoStringResultados = Files.readString(archivoResultados);
         String[] listaStringResultados = archivoStringResultados.split(",");

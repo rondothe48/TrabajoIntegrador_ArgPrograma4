@@ -7,11 +7,8 @@ import java.util.List;
 public class Partido {
     //private String equipo1;
     //private String equipo2;
-    static private String equipo1;
-    static private String equipo2;
     private int golesEquipo1;
     private int golesEquipo2;
-    //static String[]resultadoEnum = {"GANADOR", "EMPATE", "PERDEDOR"};
 
     public int getGolesEquipo1() {
         return golesEquipo1;
@@ -36,9 +33,7 @@ public class Partido {
     }*/
 
     public Partido(String equipo1, String equipo2) throws IOException {
-        Partido.equipo1 = equipo1;
-        Partido.equipo2 = equipo2;
-        Path archivoResultados = Paths.get("C:\\Users\\Rondo48\\Documents\\GitHub\\TrabajoIntegrador\\Trabajo Integrador\\src\\resultados.csv");
+        Path archivoResultados = Paths.get("C:\\Nacho\\GitHub Repositories\\TrabajoIntegrador\\Trabajo Integrador\\src/resultados.csv");
         Files.readAllLines(archivoResultados);
         String archivoStringResultados = Files.readString(archivoResultados);
         String[] listaStringResultados = archivoStringResultados.split(",");
