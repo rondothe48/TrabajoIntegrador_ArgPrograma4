@@ -5,11 +5,13 @@ import java.nio.file.Paths;
 import java.util.List;
 
 public class Partido {
-    private Equipo equipo1;
-    private Equipo equipo2;
+    //private String equipo1;
+    //private String equipo2;
+    static String equipo1;
+    static String equipo2;
     private int golesEquipo1;
     private int golesEquipo2;
-    static String[]resultadoEnum = {"GANADOR", "EMPATE", "PERDEDOR"};
+    //static String[]resultadoEnum = {"GANADOR", "EMPATE", "PERDEDOR"};
 
     public int getGolesEquipo1() {
         return golesEquipo1;
@@ -34,6 +36,8 @@ public class Partido {
     }*/
 
     public Partido(String equipo1, String equipo2) throws IOException {
+        Partido.equipo1 = equipo1;
+        Partido.equipo2 = equipo2;
         Path archivoResultados = Paths.get("E:/AAA GitHub/TrabajoIntegrador/Trabajo Integrador/src/resultados.csv");
         Files.readAllLines(archivoResultados);
         String archivoStringResultados = Files.readString(archivoResultados);
