@@ -8,8 +8,9 @@ public class Main {
     public static void main(String[] args) throws IOException {
         Ronda ronda1 = new Ronda(Paths.get("E:/AAA GitHub/TrabajoIntegrador/Trabajo Integrador/src/resultados.csv"));
         System.out.println(ronda1);
-
-
+        System.out.println("------------" + "\n------------");
+        Pronostico pronosticoPrueba = new Pronostico(Paths.get("E:/AAA GitHub/TrabajoIntegrador/Trabajo Integrador/src/pronostico.csv"));
+        System.out.println(pronosticoPrueba);
 
 
 

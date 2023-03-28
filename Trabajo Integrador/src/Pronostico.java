@@ -41,8 +41,15 @@ public class Pronostico {
 
     }*/
 
-    /*public Pronostico(Equipo equipo1, Equipo equipo2) {
-        this.equipo1 = equipo1;
+    public Pronostico(Path archivoPronostico) throws IOException {
+        Files.readAllLines(archivoPronostico);
+        String archivoStringPronostico = Files.readString(archivoPronostico);
+        String[] listaStringPronostico = archivoStringPronostico.split(",");
+
+
+
+
+        /*this.equipo1 = equipo1;
         this.equipo2 = equipo2;
         setGolesEquipo1(1);
         setGolesEquipo2(2);
@@ -52,8 +59,8 @@ public class Pronostico {
         } else {
             System.out.println(equipo2 + "\n" + ResultadoEnum[0]);
             System.out.println(equipo1 + "\n" + ResultadoEnum[2]);
-        }
-    }*/
+        }*/
+    }
 
     public void puntos() {
     }
