@@ -5,7 +5,29 @@ import java.nio.file.Paths;
 
 public class Pronostico {
 
-    private Equipo equipo1;
+        //private List<Partido> partidos;
+
+    public Pronostico(Path archivoResultados) throws IOException {
+            // Leer archivo de resultados y construir lista de objetos Partido
+        Files.readAllLines(archivoResultados);
+        String archivoStringResultados = Files.readString(archivoResultados);
+        String[] listaStringResultados = archivoStringResultados.split(",");
+        /*      Este código es de prueba /// funcional
+        List<String> lineas = Files.readAllLines(archivoResultados);
+        String archivoStringResultados = String.join(",", lineas);
+        String[] listaStringResultados = archivoStringResultados.split(",");*/
+        PartidoProyectado partido1 = new PartidoProyectado(listaStringResultados[9], listaStringResultados[14]);
+        PartidoProyectado partido2 = new PartidoProyectado(listaStringResultados[17], listaStringResultados[22]);
+
+
+
+
+
+
+
+
+
+    /*private Equipo equipo1;
     private Equipo equipo2;
     private int golesEquipo1;
     private int golesEquipo2;
@@ -41,7 +63,7 @@ public class Pronostico {
 
     }*/
 
-    public Pronostico(Path archivoPronostico) throws IOException {
+    /*public Pronostico(Path archivoPronostico) throws IOException {
         Files.readAllLines(archivoPronostico);
         String archivoStringPronostico = Files.readString(archivoPronostico);
         String[] listaStringPronostico = archivoStringPronostico.split(",");
@@ -60,8 +82,10 @@ public class Pronostico {
             System.out.println(equipo2 + "\n" + ResultadoEnum[0]);
             System.out.println(equipo1 + "\n" + ResultadoEnum[2]);
         }*/
+}
+    public String toString() {
+        return "";
     }
-
     public void puntos() {
     }
 }

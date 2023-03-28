@@ -7,8 +7,8 @@ import java.util.List;
 public class Partido {
     //private String equipo1;
     //private String equipo2;
-    static String equipo1;
-    static String equipo2;
+    static private String equipo1;
+    static private String equipo2;
     private int golesEquipo1;
     private int golesEquipo2;
     //static String[]resultadoEnum = {"GANADOR", "EMPATE", "PERDEDOR"};
@@ -38,7 +38,7 @@ public class Partido {
     public Partido(String equipo1, String equipo2) throws IOException {
         Partido.equipo1 = equipo1;
         Partido.equipo2 = equipo2;
-        Path archivoResultados = Paths.get("E:/AAA GitHub/TrabajoIntegrador/Trabajo Integrador/src/resultados.csv");
+        Path archivoResultados = Paths.get("C:\\Users\\Rondo48\\Documents\\GitHub\\TrabajoIntegrador\\Trabajo Integrador\\src\\resultados.csv");
         Files.readAllLines(archivoResultados);
         String archivoStringResultados = Files.readString(archivoResultados);
         String[] listaStringResultados = archivoStringResultados.split(",");
@@ -68,6 +68,8 @@ public class Partido {
                 System.out.println(equipo1 + " " + ResultadoEnum.EMPATE + " " + equipo2);
             };
         }
+
+
 
         //  BUSCAR SOLUCION A LA REPETICION DE CÓDIGO
 
@@ -102,9 +104,7 @@ public class Partido {
             System.out.println(equipo1 + " - " + resultadoEnum[1] + " - " + equipo2);
         }*/
     }
-    /*public static void resultado(Equipo equipo) {
-        ResultadoEnum resultado = ResultadoEnum.GANADOR;
-        System.out.println(equipo);
-        System.out.println(resultado);
-    }*/
+
+
+
 }

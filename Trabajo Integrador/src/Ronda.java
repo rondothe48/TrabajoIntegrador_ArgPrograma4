@@ -31,4 +31,8 @@ public class Ronda {
         return partidos;
 
     }*/
+
+    public String toString() {
+        return "";
+    }
 }
