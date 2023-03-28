@@ -53,7 +53,7 @@ public class Partido {
             } else if (equipo1.equals(listaStringResultados[17])) {
                 equipo1 = String.valueOf(Equipo.POLONIA);
                 equipo2 = String.valueOf(Equipo.MEXICO);
-                System.out.println("------------\n" + "Las selecciones a jugar son= " + equipo1 + " y " + equipo2);
+                System.out.println("------------\n" + "Las selecciones a jugar son = " + equipo1 + " y " + equipo2);
                 setGolesEquipo1(Integer.parseInt(listaStringResultados[19]));
                 setGolesEquipo2(Integer.parseInt(listaStringResultados[20]));
             }
