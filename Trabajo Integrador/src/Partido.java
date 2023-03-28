@@ -39,12 +39,20 @@ public class Partido {
         String archivoStringResultados = Files.readString(archivoResultados);
         String[] listaStringResultados = archivoStringResultados.split(",");
 
-        if (equipo1.equals(listaStringResultados[9])) {
-            equipo1 = String.valueOf(Equipo.ARGENTINA);
-            equipo2 = String.valueOf(Equipo.ARABIA_SAUDITA);
-            System.out.println("Las selecciones a jugar son= " + equipo1 + " y " + equipo2);
-            setGolesEquipo1(Integer.parseInt(listaStringResultados[11]));
-            setGolesEquipo2(Integer.parseInt(listaStringResultados[12]));
+        if (equipo1.equals(listaStringResultados[9]) || equipo1.equals(listaStringResultados[17])) {
+            if (equipo1.equals(listaStringResultados[9])) {
+                equipo1 = String.valueOf(Equipo.ARGENTINA);
+                equipo2 = String.valueOf(Equipo.ARABIA_SAUDITA);
+                System.out.println("Las selecciones a jugar son= " + equipo1 + " y " + equipo2);
+                setGolesEquipo1(Integer.parseInt(listaStringResultados[11]));
+                setGolesEquipo2(Integer.parseInt(listaStringResultados[12]));
+            } else if (equipo1.equals(listaStringResultados[17])) {
+                equipo1 = String.valueOf(Equipo.POLONIA);
+                equipo2 = String.valueOf(Equipo.MEXICO);
+                System.out.println("Las selecciones a jugar son= " + equipo1 + " y " + equipo2);
+                setGolesEquipo1(Integer.parseInt(listaStringResultados[19]));
+                setGolesEquipo2(Integer.parseInt(listaStringResultados[20]));
+            }
             if (golesEquipo1 > golesEquipo2) {
 
                 System.out.println(equipo1 + " " + ResultadoEnum.GANADOR + "\n" + equipo2 + " " + ResultadoEnum.PERDEDOR);
@@ -59,7 +67,7 @@ public class Partido {
 
         //  BUSCAR SOLUCION A LA REPETICION DE CÓDIGO
 
-        if (equipo1.equals(listaStringResultados[17])) {
+        /*if (equipo1.equals(listaStringResultados[17])) {
             equipo1 = String.valueOf(Equipo.POLONIA);
             equipo2 = String.valueOf(Equipo.MEXICO);
             System.out.println("Las selecciones a jugar son= " + equipo1 + " y " + equipo2);
@@ -75,7 +83,7 @@ public class Partido {
 
             System.out.println(equipo1 + " " + ResultadoEnum.EMPATE + " " + equipo2);
             }
-        }
+        }*/
         /*this.equipo1=equipo1;
         this.equipo2=equipo2;
         setGolesEquipo1(1);
