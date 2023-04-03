@@ -6,10 +6,30 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        Ronda ronda1 = new Ronda(Paths.get("C:\\Nacho\\GitHub Repositories\\TrabajoIntegrador\\Trabajo Integrador\\src/resultados.csv"));
+        //resultados lector .csv
+        Path archivoResultados = Paths.get("src/resultados.csv");
+        Files.readAllLines(archivoResultados);
+        String archivoStringResultados = Files.readString(archivoResultados);
+
+        String[] listaStringResultados = archivoStringResultados.split(",");
+
+
+        //pronostico lector .csv
+        Path archivoPronostico = Paths.get("src/pronostico.csv");
+        Files.readAllLines(archivoPronostico);
+        String archivoStringPronostico = Files.readString(archivoPronostico);
+
+        String[] listaStringPronostico = archivoStringPronostico.split(",");
+
+
+        //New ronda
+        Ronda ronda1 = new Ronda(listaStringResultados);
         System.out.println(ronda1);
+
         System.out.println("------------" + "\n------------");
-        Pronostico pronosticoPrueba = new Pronostico(Paths.get("C:\\Nacho\\GitHub Repositories\\TrabajoIntegrador\\Trabajo Integrador\\src/pronostico.csv"));
+
+        //New pronostico
+        Pronostico pronosticoPrueba = new Pronostico(listaStringPronostico, listaStringResultados);
         System.out.println(pronosticoPrueba);
 
 

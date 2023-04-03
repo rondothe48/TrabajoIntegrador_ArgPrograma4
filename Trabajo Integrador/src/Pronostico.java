@@ -56,22 +56,28 @@ public class Pronostico {
 
     }*/
 
-    public Pronostico(Path archivoPronostico) throws IOException {
+    public Pronostico(String[] listaStringPronostico, String[] listaStringResultados) throws IOException {
             int puntos = 0;
 
-            Path archivoResultado = Paths.get("C:/Nacho/GitHub Repositories/TrabajoIntegrador/Trabajo Integrador/src/resultados.csv");
-            Files.readAllLines(archivoResultado);
-            String archivoStringResultado = Files.readString(archivoResultado);
-            String[] listaStringResultado = archivoStringResultado.split(",");
+            //PRUEBA DE PRONOSTICO CON BUCLE FOR  --- intentar solucionarlo
+            for(int i = 0; i < listaStringPronostico.length; i++) {
+                if (listaStringPronostico[i].equals("x")) {
+                    setGolesEquipo1(Integer.parseInt(listaStringResultados[11]));
+                    setGolesEquipo2(Integer.parseInt(listaStringResultados[12]));
+                    if (listaStringPronostico[i].equals("x") && golesEquipo1 > golesEquipo2) {
+                        puntos++;
+                    } else if (listaStringPronostico[i].equals("x")  && golesEquipo1 == golesEquipo2) {
+                        puntos++;
+                    } else if (listaStringPronostico[i].equals("x")  && golesEquipo1 < golesEquipo2) {
+                        puntos++;
+                    }
+            }
 
-            Files.readAllLines(archivoPronostico);
-            String archivoStringPronostico = Files.readString(archivoPronostico);
-            String[] listaStringPronostico = archivoStringPronostico.split(",");
 
 
             if (listaStringPronostico[6].equals("x") || listaStringPronostico[7].equals("x") || listaStringPronostico[8].equals("x")) {
-                setGolesEquipo1(Integer.parseInt(listaStringResultado[11]));
-                setGolesEquipo2(Integer.parseInt(listaStringResultado[12]));
+                setGolesEquipo1(Integer.parseInt(listaStringResultados[11]));
+                setGolesEquipo2(Integer.parseInt(listaStringResultados[12]));
                 if (listaStringPronostico[6].equals("x") && golesEquipo1 > golesEquipo2) {
                     puntos++;
                 } else if (listaStringPronostico[7].equals("x")  && golesEquipo1 == golesEquipo2) {
@@ -81,8 +87,8 @@ public class Pronostico {
                 }
             }
             if (listaStringPronostico[11].equals("x") || listaStringPronostico[12].equals("x") || listaStringPronostico[13].equals("x")) {
-                setGolesEquipo1(Integer.parseInt(listaStringResultado[19]));
-                setGolesEquipo2(Integer.parseInt(listaStringResultado[20]));
+                setGolesEquipo1(Integer.parseInt(listaStringResultados[19]));
+                setGolesEquipo2(Integer.parseInt(listaStringResultados[20]));
                 if (listaStringPronostico[11].equals("x") && golesEquipo1 > golesEquipo2) {
                     puntos++;
                 } else if ( listaStringPronostico[12].equals("x")  && golesEquipo1 == golesEquipo2) {
@@ -93,7 +99,7 @@ public class Pronostico {
             }
 
         System.out.println("Mariana tiene = " + puntos + " puntos");
-    }
+            }
         /*this.equipo1 = equipo1;
         this.equipo2 = equipo2;
         setGolesEquipo1(1);
@@ -105,9 +111,8 @@ public class Pronostico {
             System.out.println(equipo2 + "\n" + ResultadoEnum[0]);
             System.out.println(equipo1 + "\n" + ResultadoEnum[2]);
         }*/
-    public String toString() {
+    /*public String toString() {
         return "";
-    }
-    public void puntos() {
+    }*/
     }
 }

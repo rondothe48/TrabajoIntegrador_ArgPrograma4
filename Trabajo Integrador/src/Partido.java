@@ -33,10 +33,13 @@ public class Partido {
     }*/
 
     public Partido(String equipo1, String equipo2) throws IOException {
-        Path archivoResultados = Paths.get("C:\\Nacho\\GitHub Repositories\\TrabajoIntegrador\\Trabajo Integrador\\src/resultados.csv");
+        //Lector de .csv --- (no usar el del Main) --- asi es más práctico
+        Path archivoResultados = Paths.get("src/resultados.csv");
         Files.readAllLines(archivoResultados);
         String archivoStringResultados = Files.readString(archivoResultados);
         String[] listaStringResultados = archivoStringResultados.split(",");
+
+
 
         if (equipo1.equals(listaStringResultados[9]) || equipo1.equals(listaStringResultados[17])) {
             if (equipo1.equals(listaStringResultados[9])) {
